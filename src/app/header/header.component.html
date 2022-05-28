@@ -29,13 +29,13 @@
     {{ keyword }}
 
     <span class="highlight">
-      <span *ngIf="!keyword;then noKeyword; else hasKeyword"></span>
+      <ng-container *ngIf="!keyword;then noKeyword; else hasKeyword"></ng-container>
 
       <ng-template #noKeyword>
-        <span>請輸入關鍵字</span>
+        請輸入關鍵字
       </ng-template>
       <ng-template #hasKeyword>
-        <span>關鍵字：{{ keyword }}</span>
+        關鍵字：{{ keyword }}
       </ng-template>
     </span>
 
