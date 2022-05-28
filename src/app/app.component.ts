@@ -2,6 +2,7 @@ import { filterArticle, FilterArticlePipe } from './filter-article.pipe';
 import { ArticlesService } from './articles.service';
 import { Article } from './article';
 import { Component, OnInit } from '@angular/core';
+import { map, shareReplay } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ export class AppComponent implements OnInit {
   title = 'conduit 20220528';
   subTitle = 'A place to share your <u>knowledge</u>.';
   keyword = '';
+  displayArticles = false;
 
   // articles: Article[] = this.articlesService.articles;
   // get articles(): Article[] {
@@ -20,12 +22,17 @@ export class AppComponent implements OnInit {
   // }
   articles: Article[] = [];
 
+  articles$ = this.articlesService.queryArticles('').pipe(
+    map(result => result.articles),
+    shareReplay(1)
+  );
+
   constructor(private articlesService: ArticlesService, private filterArticlePipe: FilterArticlePipe) { }
 
   ngOnInit() {
-    this.articlesService.queryArticles('').subscribe(result => {
-      this.articles = result.articles;
-    });
+    // this.articlesService.queryArticles('').subscribe(result => {
+    //   this.articles = result.articles;
+    // });
   }
 
 
