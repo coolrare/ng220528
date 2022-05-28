@@ -1,6 +1,4 @@
-<app-header
-  [(keyword)]="keyword"
-  (searchArticle)="searchArticle($event)"></app-header>
+<app-header [(keyword)]="keyword" (searchArticle)="searchArticle($event)"></app-header>
 
 <div>keyword: {{ keyword }}</div>
 
@@ -19,7 +17,7 @@
     <div class="row">
 
       <div class="col-md-9">
-        <app-articles [list]="articles"  ></app-articles>
+        <app-articles [list]="articles | filterArticle:keyword"></app-articles>
       </div>
       <div class="col-md-3">
         <app-tags></app-tags>

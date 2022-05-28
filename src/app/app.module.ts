@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderDemoComponent } from './header-demo/header-demo.component';
 import { TableComponent } from './table/table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterArticlePipe } from './filter-article.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     TagsComponent,
     FooterComponent,
     HeaderDemoComponent,
-    TableComponent
+    TableComponent,
+    FilterArticlePipe
   ],
   imports: [
     BrowserModule,
