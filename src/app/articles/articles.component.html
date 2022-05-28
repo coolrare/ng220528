@@ -21,7 +21,7 @@
       </button>
     </div>
     <a href="post.html" class="preview-link">
-      <h1>{{ index }} - {{ item.title }}</h1>
+      <h1>{{ index }} - {{ item.title | titleLimit:10:'...' }}</h1>
       <p>{{ item.description }}</p>
       <span>Read more...</span>
     </a>

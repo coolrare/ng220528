@@ -12,6 +12,7 @@ import { HeaderDemoComponent } from './header-demo/header-demo.component';
 import { TableComponent } from './table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterArticlePipe } from './filter-article.pipe';
+import { TitleLimitPipe } from './title-limit.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FilterArticlePipe } from './filter-article.pipe';
     FooterComponent,
     HeaderDemoComponent,
     TableComponent,
-    FilterArticlePipe
+    FilterArticlePipe,
+    TitleLimitPipe
   ],
   imports: [
     BrowserModule,

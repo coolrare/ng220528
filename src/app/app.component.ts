@@ -1,3 +1,4 @@
+import { filterArticle, FilterArticlePipe } from './filter-article.pipe';
 import { ArticlesService } from './articles.service';
 import { Article } from './article';
 import { Component, OnInit } from '@angular/core';
@@ -5,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [FilterArticlePipe]
 })
 export class AppComponent implements OnInit {
   title = 'conduit 20220528';
@@ -18,7 +20,7 @@ export class AppComponent implements OnInit {
   // }
   articles: Article[] = [];
 
-  constructor(private articlesService: ArticlesService) { }
+  constructor(private articlesService: ArticlesService, private filterArticlePipe: FilterArticlePipe) { }
 
   ngOnInit() {
     this.articlesService.queryArticles('').subscribe(result => {
@@ -33,6 +35,8 @@ export class AppComponent implements OnInit {
     // this.articlesService.searchArticle(keyword);
     this.articlesService.queryArticles(keyword).subscribe(result => {
       this.articles = result.articles;
+      // this.articles = filterArticle(this.articles, keyword);
+      // this.articles = this.filterArticlePipe.transform(this.articles, keyword);
     });
   }
 }
