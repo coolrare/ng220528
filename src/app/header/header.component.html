@@ -1,6 +1,11 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand" href="index.html">conduit</a>
+    <a class="navbar-brand" [class.highlight]="highlightTitle" href="index.html">conduit</a>
+
+
+    <app-header-demo></app-header-demo>
+
+    <a class="navbar-brand" [class]="{ highlight: highlightTitle }" href="index.html">conduit</a>
 
     <input
       [(ngModel)]="keyword"

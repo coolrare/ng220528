@@ -9,6 +9,7 @@ export class HeaderComponent implements OnInit {
 
   keyword = 'test';
   // inputType = 'text';
+  highlightTitle = false;
 
   constructor() { }
 
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
   search(event: MouseEvent) {
     console.log(event.clientX);
     this.keyword += '!';
+    this.highlightTitle = !this.highlightTitle;
   }
 
 }

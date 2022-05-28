@@ -1,0 +1,3 @@
+:host ::ng-deep .highlight {
+  color: red !important;
+}
