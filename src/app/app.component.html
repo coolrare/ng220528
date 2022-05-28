@@ -1,4 +1,8 @@
-<app-header (searchArticle)="searchArticle($event)"></app-header>
+<app-header
+  [(keyword)]="keyword"
+  (searchArticle)="searchArticle($event)"></app-header>
+
+<div>keyword: {{ keyword }}</div>
 
 <div class="home-page">
 

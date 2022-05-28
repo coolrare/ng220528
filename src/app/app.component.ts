@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'conduit 20220528';
   subTitle = 'A place to share your <u>knowledge</u>.';
+  keyword = '';
+
   articles: Article[] = [
     {
       title:
