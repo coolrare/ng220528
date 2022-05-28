@@ -1,8 +1,6 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand"
-      [class.highlight]="highlightTitle"
-      [style.font-size.px]="fontSize"
+    <a class="navbar-brand" [class.highlight]="highlightTitle" [style.font-size.px]="fontSize"
       href="index.html">conduit</a>
 
 
@@ -10,9 +8,7 @@
 
     <a class="navbar-brand" [class]="{ highlight: highlightTitle }" href="index.html">conduit</a> -->
 
-    <input
-      [(ngModel)]="keyword"
-      class="form-control form-control-sm search-input" type="text" placeholder="Keyword">
+    <input [(ngModel)]="keyword" class="form-control form-control-sm search-input" type="text" placeholder="Keyword">
 
     <!-- <input
       [type]="inputType" > -->
@@ -27,9 +23,34 @@
       (ngModelChange)="keyword = $event"
       class="form-control form-control-sm search-input" type="text" placeholder="Keyword"> -->
 
-    <button class="btn btn-sm btn-primary" (click)="search($event)" >
+    <button class="btn btn-sm btn-primary" (click)="search($event)">
       <i class="ion-search"></i>
     </button>
     {{ keyword }}
+
+    <span class="highlight">
+      <span *ngIf="!keyword;then noKeyword; else hasKeyword"></span>
+
+      <ng-template #noKeyword>
+        <span>請輸入關鍵字</span>
+      </ng-template>
+      <ng-template #hasKeyword>
+        <span>關鍵字：{{ keyword }}</span>
+      </ng-template>
+    </span>
+
+    <!-- <span class="highlight">
+      <span *ngIf="!keyword; else noKeyword">請輸入關鍵字</span>
+      <ng-template #noKeyword>
+        <span>關鍵字：{{ keyword }}</span>
+      </ng-template>
+    </span> -->
+
+    <!-- <span class="highlight" *ngIf="!keyword; else noKeyword">請輸入關鍵字</span>
+
+    <ng-template #noKeyword>
+      <span class="highlight">關鍵字：{{ keyword }}</span>
+    </ng-template> -->
+
   </div>
 </nav>
