@@ -8,6 +8,7 @@ import { TagsComponent } from './tags/tags.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderDemoComponent } from './header-demo/header-demo.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderDemoComponent } from './header-demo/header-demo.component';
     ArticlesComponent,
     TagsComponent,
     FooterComponent,
-    HeaderDemoComponent
+    HeaderDemoComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
