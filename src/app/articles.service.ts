@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Article } from './article';
 
@@ -65,10 +66,14 @@ export class ArticlesService {
   ];
   originalArticles = this.articles;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   searchArticle(keyword: string) {
     // console.log(keyword);
     this.articles = this.originalArticles.filter(article => article.title.indexOf(keyword) !== -1);
+  }
+
+  queryArticles(keyword: string) {
+    return this.httpClient.get<{ articles: Article[] }>(`https://api.realworld.io/api/articles?q=${keyword}`);
   }
 }
