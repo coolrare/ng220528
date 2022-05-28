@@ -66,4 +66,10 @@ export class AppComponent {
       favoritesCount: 5,
     },
   ];
+  originalArticles = this.articles;
+
+  searchArticle(keyword: string) {
+    // console.log(keyword);
+    this.articles = this.originalArticles.filter(article => article.title.indexOf(keyword) !== -1);
+  }
 }
