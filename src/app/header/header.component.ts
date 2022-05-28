@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  keyword = 'test';
+  // inputType = 'text';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  search(event: MouseEvent) {
+    console.log(event.clientX);
+    this.keyword += '!';
   }
 
 }
