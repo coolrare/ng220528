@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   keyword = 'test';
   // inputType = 'text';
   highlightTitle = false;
+  fontSize = 24;
 
   constructor() { }
 
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
     console.log(event.clientX);
     this.keyword += '!';
     this.highlightTitle = !this.highlightTitle;
+    this.fontSize++;
   }
 
 }
